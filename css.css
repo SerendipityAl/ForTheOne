@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #212121;
+  overflow: hidden;
+}
+
+.mosaica {
+  position: fixed;
+  left: 2px;
+  bottom: 2px;
+  padding: 4px 6px;
+  color: #FFFFFF;
+  font-family: "Montserrat";
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.mosaica a{
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  margin: 0 0 0 30px;
+}
+.mosaica a:hover{
+  color: orange;
+}
+.container {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 43%;
+  top: 50%;
+  perspective: 1200px;
+  transform-origin: center center;
+  cursor: move;
+}
+
+.plane {
+  position: absolute;
+  display: block;
+  width: 900px;
+  height: 700px;
+  border: 0;
+  margin: -350px 0 0 -450px;
+  transform-style: preserve-3d;
+}
+.plane:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('../img/background.jpg') no-repeat;
+  background-size: 100% 700px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateZ(-1px);
+}
+
+.items {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.item {
+  background-color: pink;
+  position: absolute;
+  overflow: hidden;
+  /*border: 1px solid #2785db;*/
+}
+.item2,
+.item3{
+  position: absolute;
+  left: 0;
+  top:0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background:url(../img/heart.png) no-repeat center;
+  background-size: 85px 69.5px;
+  color: #fff;
+  text-align: center;
+  font-size: 75px;
+  line-height: 87.5px;
+  font-family: "微软雅黑","helvetica neue",arial,sans-serif;
+  font-weight: 900;
+  text-shadow:0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+@keyframes animate {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);
+    transform-origin: 50% 50% 0;
+    opacity: 1;
+  } 
+  100% {
+    transform: translate3d(0px, 0px, 1200px) rotateX(180deg) rotateY(360deg) rotateZ(180deg) scale3d(0, 0, 0);
+    transform-origin: 50% 50% 0;
+    opacity: 1;
+  }
+}
+@keyframes animate3 {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);
+    transform-origin: 50% 50% 0;
+    font-size: 75px;
+    opacity: 1;
+  }  
+  100% {
+    transform: translate3d(0px, 0px, 1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(0, 0, 0);
+    transform-origin: 50% 50% 0;
+    font-size: 150px;
+    opacity: 1;
+    color: orange;
+  }
+}
+
+.item.animate {
+  transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);
+  transform-origin: 50% 50% 0;
+  animation: animate 15s forwards;
+}
+.item2.animate {
+  transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);
+  transform-origin: 50% 50% 0;
+  animation: animate 10s forwards;
+}
+.item3.animate {
+  transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);
+  transform-origin: 50% 50% 0;
+
+  animation: animate3 10s forwards;
+}
+.poem{
+  position: absolute;
+  top:18%;
+  left: 78%;
+  line-height: 80px;
+  color: #fff;
+  font-size: 30px;
+  font-family: "微软雅黑","helvetica neue",arial,sans-serif;
+  font-weight: 800;
+  text-shadow:1px 0px #009807, 1px 2px #006705, 3px 1px #009807, 2px 3px #006705, 4px 2px #009807, 4px 4px #006705, 5px 3px #009807;
+}
+ 
